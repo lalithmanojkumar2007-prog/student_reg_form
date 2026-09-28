@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>🎓 Student Registry</h2>
+
+        <nav>
+            <a href="/" class="active">Dashboard</a>
+            <a href="/">Registration</a>
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>Manage student records</p>
+            </div>
+
+            <button id="addStudentBtn">
+                + Add Student
+            </button>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>👨‍🎓</span>
+                <div>
+                    <h3>Total Students</h3>
+                    <strong id="totalStudents">0</strong>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <span>🎓</span>
+                <div>
+                    <h3>Courses</h3>
+                    <strong id="totalCourses">0</strong>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <span>💻</span>
+                <div>
+                    <h3>Branches</h3>
+                    <strong id="totalBranches">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- STUDENT LIST -->
+
+        <section class="students-section">
+
+            <div class="section-header">
+
+                <h2>Student Records</h2>
+
+                <div class="search-area">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search name, roll number or email..."
+                    >
+
+                    <button id="refreshBtn">
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll Number</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Course</th>
+                            <th>Branch</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- STUDENT MODAL -->
+
+    <div id="studentModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Add Student
+                </h2>
+
+                <button id="closeModal" class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="studentForm">
+
+                <input
+                    type="hidden"
+                    id="studentId"
+                >
+
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    required
+                >
+
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    id="studentAge"
+                    required
+                >
+
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    required
+                >
+
+
+                <label>Phone</label>
+
+                <input
+                    type="text"
+                    id="studentPhone"
+                    required
+                >
+
+
+                <label>Roll Number</label>
+
+                <input
+                    type="text"
+                    id="studentRollNumber"
+                    required
+                >
+
+
+                <label>Course</label>
+
+                <select id="studentCourse" required>
+
+                    <option value="">
+                        Select Course
+                    </option>
+
+                    <option value="BCA">
+                        BCA
+                    </option>
+
+                    <option value="BSc">
+                        B.Sc
+                    </option>
+
+                    <option value="BCom">
+                        B.Com
+                    </option>
+
+                    <option value="BE">
+                        B.E
+                    </option>
+
+                    <option value="BTech">
+                        B.Tech
+                    </option>
+
+                </select>
+
+
+                <label>Branch</label>
+
+                <select id="studentBranch" required>
+
+                    <option value="">
+                        Select Branch
+                    </option>
+
+                    <option value="CSE">
+                        CSE
+                    </option>
+
+                    <option value="ECE">
+                        ECE
+                    </option>
+
+                    <option value="EEE">
+                        EEE
+                    </option>
+
+                    <option value="MECH">
+                        Mechanical
+                    </option>
+
+                    <option value="CIVIL">
+                        Civil
+                    </option>
+
+                </select>
+
+
+                <label>Gender</label>
+
+                <select id="studentGender" required>
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label>Address</label>
+
+                <textarea
+                    id="studentAddress"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    Save Student
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

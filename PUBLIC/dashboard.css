@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 230px;
+    height: 100vh;
+
+    background: #20232a;
+    color: white;
+
+    padding: 25px 15px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+
+    padding: 14px;
+
+    border-radius: 8px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #3a3f47;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 230px;
+    padding: 30px;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+}
+
+.topbar p {
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* BUTTON */
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 11px 18px;
+
+    font-size: 14px;
+}
+
+#addStudentBtn {
+    background: #222;
+    color: white;
+}
+
+#addStudentBtn:hover {
+    background: #444;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card span {
+    font-size: 35px;
+}
+
+.stat-card h3 {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.stat-card strong {
+    font-size: 27px;
+}
+
+
+/* STUDENT SECTION */
+
+.students-section {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.search-area {
+    display: flex;
+    gap: 10px;
+}
+
+.search-area input {
+    width: 300px;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+#refreshBtn {
+    background: #eee;
+}
+
+
+/* TABLE */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+
+    border-bottom: 1px solid #eee;
+
+    text-align: left;
+}
+
+th {
+    background: #f7f7f7;
+}
+
+tr:hover {
+    background: #fafafa;
+}
+
+
+/* ACTION BUTTONS */
+
+.edit-btn {
+    background: #e8e8e8;
+    margin-right: 5px;
+}
+
+.delete-btn {
+    background: #333;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #ccc;
+}
+
+.delete-btn:hover {
+    background: #555;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+
+    width: 500px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: transparent;
+
+    font-size: 28px;
+
+    padding: 0;
+}
+
+.modal-content label {
+    display: block;
+
+    margin-top: 12px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+}
+
+.modal-content textarea {
+    height: 80px;
+
+    resize: vertical;
+}
+
+.save-btn {
+    width: 100%;
+
+    margin-top: 20px;
+
+    background: #222;
+
+    color: white;
+}
+
+.save-btn:hover {
+    background: #444;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .main {
+        margin-left: 180px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .search-area input {
+        width: 100%;
+    }
+
+}
